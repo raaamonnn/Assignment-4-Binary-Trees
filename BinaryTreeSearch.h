@@ -8,11 +8,11 @@ class BinaryTreeSearch
 private:
 	struct TreeNode
 	{
-		string value;
+		int value;
 		TreeNode *left;
 		TreeNode *right;
 
-		TreeNode(string value, TreeNode *left = nullptr, TreeNode *right = nullptr)
+		TreeNode(int value, TreeNode *left = nullptr, TreeNode *right = nullptr)
 		{
 			this->value = value;
 			this->left = left;
@@ -21,9 +21,8 @@ private:
 	};
 
 	TreeNode *root;
-
 	//inserting values
-	void insert(TreeNode *&tree, string value)
+	void insert(TreeNode *&tree, int value)
 	{
 		//if the tree is empty BASE CASE 1
 		if(tree == nullptr)
@@ -35,8 +34,7 @@ private:
 		//if the value is already the tree BASE CASE 2
 		if(value == tree->value)
 		{
-			cout << value << " already exists in the tree\n";
-			return;
+			insert(tree->left, value);
 		}
 
 		//if the value is being inserted is less than the value of the current node
@@ -68,13 +66,14 @@ private:
 	}
 
 public:
+
 	BinaryTreeSearch()
 	{
 		root = nullptr;
 	}
 
 	//this is done so the user does not have direct access to root
-	void insert(string value)
+	void insert(int value)
 	{
 		insert(root, value);
 	}
@@ -89,12 +88,12 @@ public:
 		//ask user for the letter
 		//if letter is in the tree, then return a found message
 		TreeNode *tree = root;
-		string userInput;
+		int userInput;
 		bool found = false;
 
 		//prompt user
 		cout << "\nPlease enter a value that you would like to search for: ";
-		getline(cin, userInput);
+		cin >> userInput;
 
 
 		//search for the letter
@@ -150,6 +149,7 @@ public:
 	    printInorder(tree->left);
 
 	    /* then print the data of node */
+
 	    cout << tree->value << " ";
 
 	    /* now recur on right child */
@@ -182,6 +182,7 @@ public:
 	    while(!queue.empty())
 	    {
 	    	traversal = &queue.front();
+//	    	cout << *queue.front();
 	    	queue.pop();
 
 	    	if(traversal->left!=nullptr)
@@ -194,6 +195,12 @@ public:
 	    		queue.push(traversal->right->value);
 	    	}
 	    }
+
+
+	}
+
+	 TreeNode*& getRoot()  {
+		return root;
 	}
 };
 
