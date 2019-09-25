@@ -39,5 +39,12 @@ int main()
 
 	cout << "PRINTING FIRST BREADTH\n";
 	tree->printFirstBreadth(tree->getRoot());
+
+	cout << endl << endl;
+	tree->printLevelorder(tree->getRoot());
+
+	cout << endl << endl;
+
+	tree->parentChild(tree->getRoot());
 return 0;
 }

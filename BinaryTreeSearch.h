@@ -174,34 +174,124 @@ public:
 
 	void printFirstBreadth(TreeNode* tree)
 	{
-	    queue<TreeNode> queue;
-	    TreeNode * traversal;
-
-	    queue.push(tree->value); //needed to make the while loop work
-
-	    while(!queue.empty())
-	    {
-	    	traversal = &queue.front();
-//	    	cout << *queue.front();
-	    	queue.pop();
-
-	    	if(traversal->left!=nullptr)
-	    	{
-	    		queue.push(traversal->left->value);
-	    	}
-
-	    	if(traversal->right!=nullptr)
-	    	{
-	    		queue.push(traversal->right->value);
-	    	}
-	    }
 
 
+		queue<TreeNode *> queue;
+
+		if(root == NULL) {
+			return;
+		}
+
+		queue.push(root);
+		while(!queue.empty())
+		{
+			TreeNode *temp = queue.front();
+			cout << " " << temp->value << " ";
+			queue.pop();
+
+			if(temp->left != nullptr)
+			{
+				queue.push(temp->left);
+			}
+
+			if(temp->right != nullptr)
+			{
+				queue.push(temp->right);
+			}
+		}
 	}
 
-	 TreeNode*& getRoot()  {
+	void printLevelorder(TreeNode *root)
+	{
+		int i = 1;
+		if(root == NULL)
+		{
+			return;
+		}
+
+
+		queue<TreeNode *> currentLevel;
+		queue<TreeNode *>  nextLevel;
+		currentLevel.push(root);
+		cout << "Level " << i <<": ";
+
+		while(!currentLevel.empty())
+		{
+			TreeNode *currNode = currentLevel.front();
+			currentLevel.pop();
+
+			if(currNode)
+			{
+		        cout << currNode->value << " ";
+				nextLevel.push(currNode->left);
+				nextLevel.push(currNode->right);
+			}
+
+			if(currentLevel.empty() == true)
+			{
+				i++;
+				cout << endl;
+				cout << "Level " << i <<": ";
+				swap(currentLevel, nextLevel);
+			}
+		}
+	}
+
+	void parentChild(TreeNode *ptr)
+	{
+		//basically iteratively doing breadth first
+		if(root == NULL)
+		{
+			return;
+		}
+
+		queue<TreeNode *> parent;
+		queue<TreeNode *> child;
+
+		parent.push(root); //used to enter loop
+		while(!parent.empty())
+		{
+			TreeNode *currNode = parent.front();
+			parent.pop();
+			if(currNode)
+			{
+		        cout << "Parent: " << currNode->value << endl;
+				child.push(currNode->left);
+
+		        if(currNode->left != NULL)
+		        {
+		        		cout << "Child (LEFT): " << currNode->left->value << endl;
+		        }
+		        else
+		        {
+		        		cout << "No child left node." << endl;
+		        }
+
+				child.push(currNode->right);
+
+				if(currNode->right != NULL)
+				{
+					cout << "Child (RIGHT): " << currNode->right->value << endl;
+				}
+				else
+				{
+					cout << "No child right node." << endl;
+				}
+
+				cout << endl;
+			}
+
+			if(parent.empty())
+			{
+				swap(parent, child);
+			}
+		}
+	}
+
+	 TreeNode*& getRoot()
+	 {
 		return root;
-	}
+	 }
 };
 
 

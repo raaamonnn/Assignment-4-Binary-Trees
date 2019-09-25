@@ -1,0 +1,113 @@
+************************************************************
+*	PROGRAMMED BY : Ramon Amini
+*	STUDENT ID    : 1086060
+*	CLASS         : M/W - 5pm
+*	ASSIGNMENT 2  : Stacks
+************************************************************
+/******************************************************************************
+ *  Assignment 4 - Binary Tree
+ * ----------------------------------------------------------------------------
+ * 	This program:
+ *-----------------------------------------------------------------------------
+******************************************************************************/
+
+PRINTING IN ORDER
+7 12 13 18 19 24 25 28 33 44 49 55 59 88 89 109 118 888 1001 
+
+PRINTING POST ORDER
+7 12 18 13 28 25 24 49 44 33 59 88 89 55 118 109 1001 888 19 
+
+PRINTING PRE ORDER
+19 13 12 7 18 888 109 55 33 24 25 28 44 49 89 88 59 118 1001 
+
+PRINTING FIRST BREADTH
+19 13 888 12 18 109 1001 7 55 118 33 89 24 44 88 25 49 59 28 
+
+-------------------------------------------------------------------------
+
+Level 1: 19 
+Level 2: 13 888 
+Level 3: 12 18 109 1001 
+Level 4: 7 55 118 
+Level 5: 33 89 
+Level 6: 24 44 88 
+Level 7: 25 49 59 
+Level 8: 28 
+
+-------------------------------------------------------------------------
+
+Parent: 19
+Child (LEFT): 13
+Child (RIGHT): 888
+
+Parent: 13
+Child (LEFT): 12
+Child (RIGHT): 18
+
+Parent: 888
+Child (LEFT): 109
+Child (RIGHT): 1001
+
+Parent: 12
+Child (LEFT): 7
+No child right node.
+
+Parent: 18
+No child left node.
+No child right node.
+
+Parent: 109
+Child (LEFT): 55
+Child (RIGHT): 118
+
+Parent: 1001
+No child left node.
+No child right node.
+
+Parent: 7
+No child left node.
+No child right node.
+
+Parent: 55
+Child (LEFT): 33
+Child (RIGHT): 89
+
+Parent: 118
+No child left node.
+No child right node.
+
+Parent: 33
+Child (LEFT): 24
+Child (RIGHT): 44
+
+Parent: 89
+Child (LEFT): 88
+No child right node.
+
+Parent: 24
+No child left node.
+Child (RIGHT): 25
+
+Parent: 44
+No child left node.
+Child (RIGHT): 49
+
+Parent: 88
+Child (LEFT): 59
+No child right node.
+
+Parent: 25
+No child left node.
+Child (RIGHT): 28
+
+Parent: 49
+No child left node.
+No child right node.
+
+Parent: 59
+No child left node.
+No child right node.
+
+Parent: 28
+No child left node.
+No child right node.
