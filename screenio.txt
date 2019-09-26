@@ -2,7 +2,7 @@
 *	PROGRAMMED BY : Ramon Amini
 *	STUDENT ID    : 1086060
 *	CLASS         : M/W - 5pm
-*	ASSIGNMENT 2  : Stacks
+*	ASSIGNMENT 4  : Binary Tree
 ************************************************************
 /******************************************************************************
  *  Assignment 4 - Binary Tree
