@@ -223,16 +223,25 @@ public:
 			if(currNode)
 			{
 		        cout << currNode->value << " ";
+		        if(currNode->left != nullptr)
+		        {
 				nextLevel.push(currNode->left);
+		        }
+		        if(currNode->right != nullptr)
+		        {
 				nextLevel.push(currNode->right);
+		        }
 			}
 
-			if(currentLevel.empty() == true)
+			if(currentLevel.empty())
 			{
-				i++;
-				cout << endl;
-				cout << "Level " << i <<": ";
-				swap(currentLevel, nextLevel);
+				if(!nextLevel.empty())
+				{
+					i++;
+					cout << endl;
+					cout << "Level " << i <<": ";
+					swap(currentLevel, nextLevel);
+				}
 			}
 		}
 	}
@@ -255,30 +264,30 @@ public:
 			parent.pop();
 			if(currNode)
 			{
-		        cout << "Parent: " << currNode->value << endl;
+		        cout << "\t\tParent *** " << currNode->value << " ***" << endl;
 				child.push(currNode->left);
 
 		        if(currNode->left != NULL)
 		        {
-		        		cout << "Child (LEFT): " << currNode->left->value << endl;
+		        		cout << "Left Child *** " << currNode->left->value << " *** | ";
 		        }
 		        else
 		        {
-		        		cout << "No child left node." << endl;
+		        		cout << "No child left node. | ";
 		        }
 
 				child.push(currNode->right);
 
 				if(currNode->right != NULL)
 				{
-					cout << "Child (RIGHT): " << currNode->right->value << endl;
+					cout << "Right Child *** " << currNode->right->value << " *** | ";
 				}
 				else
 				{
-					cout << "No child right node." << endl;
+					cout << "No child right node. | ";
 				}
 
-				cout << endl;
+				cout << endl << endl;
 			}
 
 			if(parent.empty())

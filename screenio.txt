@@ -7,9 +7,17 @@
 /******************************************************************************
  *  Assignment 4 - Binary Tree
  * ----------------------------------------------------------------------------
+ *  INPUT FOR THE BINARY TREE (USING A LINKED LIST): 19, 13, 888, 109, 55, 118,
+ 						   89, 33, 1001, 18, 44, 88, 12, 24, 49, 7, 25, 59, 28  
  * 	This program:
+ *  Performs the in-order, post-order, pre-order, breadth-first traversals.
+ *  In addition to the traversals, the binary tree gets printed by level. 
+ *  Lastly, all the parent-child relationship for all the nodes of the tree
+ *  are displayed
  *-----------------------------------------------------------------------------
 ******************************************************************************/
+
+*** BINARY TREE TRAVERSALS ***
 
 PRINTING IN ORDER
 7 12 13 18 19 24 25 28 33 44 49 55 59 88 89 109 118 888 1001 
@@ -25,6 +33,8 @@ PRINTING FIRST BREADTH
 
 -------------------------------------------------------------------------
 
+*** BINARY TREE PRINTED BY LEVELS ***
+
 Level 1: 19 
 Level 2: 13 888 
 Level 3: 12 18 109 1001 
@@ -36,78 +46,61 @@ Level 8: 28
 
 -------------------------------------------------------------------------
 
-Parent: 19
-Child (LEFT): 13
-Child (RIGHT): 888
+*** BINARY TREE PARENT CHILD RELATIONSHIPS ***
 
-Parent: 13
-Child (LEFT): 12
-Child (RIGHT): 18
+		Parent *** 19 ***
+Left Child *** 13 *** | Right Child *** 888 *** | 
 
-Parent: 888
-Child (LEFT): 109
-Child (RIGHT): 1001
+		Parent *** 13 ***
+Left Child *** 12 *** | Right Child *** 18 *** | 
 
-Parent: 12
-Child (LEFT): 7
-No child right node.
+		Parent *** 888 ***
+Left Child *** 109 *** | Right Child *** 1001 *** | 
 
-Parent: 18
-No child left node.
-No child right node.
+		Parent *** 12 ***
+Left Child *** 7 *** | No child right node. | 
 
-Parent: 109
-Child (LEFT): 55
-Child (RIGHT): 118
+		Parent *** 18 ***
+No child left node. | No child right node. | 
 
-Parent: 1001
-No child left node.
-No child right node.
+		Parent *** 109 ***
+Left Child *** 55 *** | Right Child *** 118 *** | 
 
-Parent: 7
-No child left node.
-No child right node.
+		Parent *** 1001 ***
+No child left node. | No child right node. | 
 
-Parent: 55
-Child (LEFT): 33
-Child (RIGHT): 89
+		Parent *** 7 ***
+No child left node. | No child right node. | 
 
-Parent: 118
-No child left node.
-No child right node.
+		Parent *** 55 ***
+Left Child *** 33 *** | Right Child *** 89 *** | 
 
-Parent: 33
-Child (LEFT): 24
-Child (RIGHT): 44
+		Parent *** 118 ***
+No child left node. | No child right node. | 
 
-Parent: 89
-Child (LEFT): 88
-No child right node.
+		Parent *** 33 ***
+Left Child *** 24 *** | Right Child *** 44 *** | 
 
-Parent: 24
-No child left node.
-Child (RIGHT): 25
+		Parent *** 89 ***
+Left Child *** 88 *** | No child right node. | 
 
-Parent: 44
-No child left node.
-Child (RIGHT): 49
+		Parent *** 24 ***
+No child left node. | Right Child *** 25 *** | 
 
-Parent: 88
-Child (LEFT): 59
-No child right node.
+		Parent *** 44 ***
+No child left node. | Right Child *** 49 *** | 
 
-Parent: 25
-No child left node.
-Child (RIGHT): 28
+		Parent *** 88 ***
+Left Child *** 59 *** | No child right node. | 
 
-Parent: 49
-No child left node.
-No child right node.
+		Parent *** 25 ***
+No child left node. | Right Child *** 28 *** | 
 
-Parent: 59
-No child left node.
-No child right node.
+		Parent *** 49 ***
+No child left node. | No child right node. | 
 
-Parent: 28
-No child left node.
-No child right node.
+		Parent *** 59 ***
+No child left node. | No child right node. | 
+
+		Parent *** 28 ***
+No child left node. | No child right node. | 
